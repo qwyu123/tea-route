@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#edefe7">
+<title>茶途智配 · 安吉春茶发运调度（演示原型）</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="bar">
+    <div class="mark">
+      <div class="dot">茶</div>
+      <div class="txt">
+        <b>茶途智配</b>
+        <span>安吉春茶订单归集与发运调度</span>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <button data-r="pool">订单池</button>
+      <button data-r="channels">渠道能力</button>
+      <button data-r="plan">调度方案</button>
+      <button data-r="compare">对比诊断</button>
+      <button data-r="live">实时订单</button>
+    </nav>
+    <div class="side">
+      <span class="chip m" title="本页所有订单、报价均为构造的演示数据">示例数据</span>
+      <button class="tbtn" id="theme" title="日夜切换">☾</button>
+    </div>
+  </div>
+
+  <main id="view"></main>
+</div>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="glass-refract" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves="2" seed="9" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="26" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
